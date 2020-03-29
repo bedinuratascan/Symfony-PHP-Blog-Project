@@ -1,0 +1,75 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}User Edit{% endblock %}
+
+{% block body %}
+<div class="page-wrapper">
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">User Edit</h4>
+                <div class="ml-auto text-right">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">User Edit</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-body">
+
+                {{ include('admin/user/_form.html.twig', {'button_label': 'Update'}) }}
+
+                <a href="{{ path('admin_user_index') }}">back to list</a>
+
+                {{ include('admin/user/_delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    <footer class="footer text-center">
+        All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
+    </footer>
+    <!-- ============================================================== -->
+    <!-- End footer -->
+    <!-- ============================================================== -->
+</div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <script src="{{ asset('admin') }}/assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="{{ asset('admin') }}/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="{{ asset('admin') }}/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="{{ asset('admin') }}/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="{{ asset('admin') }}/assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="{{ asset('admin') }}/dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="{{ asset('admin') }}/dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="{{ asset('admin') }}/dist/js/custom.min.js"></script>
+    <!-- this page js -->
+    <script src="{{ asset('admin') }}/assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
+    <script src="{{ asset('admin') }}/assets/extra-libs/multicheck/jquery.multicheck.js"></script>
+    <script src="{{ asset('admin') }}/assets/extra-libs/DataTables/datatables.min.js"></script>
+    <script>
+        /****************************************
+         *       Basic Table                   *
+         ****************************************/
+        $('#zero_config').DataTable();
+    </script>
+{% endblock %}

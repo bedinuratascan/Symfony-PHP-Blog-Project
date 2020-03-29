@@ -1,0 +1,36 @@
+{% extends 'homebase.html.twig' %}
+
+{% block title %}{{ setting[0].title }}{% endblock %}
+{% block keywords %}{{ setting[0].keywords }}{% endblock %}
+{% block description %}{{ setting[0].description }}{% endblock %}
+
+{% block body %}
+    <!-- ##### Big Posts Area Start ##### -->
+    <div class="big-posts-area mb-50">
+        <div class="container">
+            {% for post in posts %}
+                <!-- Single Big Post Area -->
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6">
+                        <div class="big-post-thumbnail mb-50">
+                            <a href="{{ path('post_show', {'id':post.id}) }}"><img src="{{ asset('uploads/image/' ~ post.image) }}" style="height: 450px; width: 450px" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="big-post-content text-center mb-50">
+                            <a href="#" class="post-tag">{{ post.category }}</a>
+                            <a href="#" class="post-title">{{ post.title }}</a>
+                            <div class="post-meta">
+                                <a href="#" class="post-date">July 11, 2018</a>
+                                <a href="#" class="post-author">By Julia Stiles</a>
+                            </div>
+                            <p>{{ post.detail|raw }} </p>
+                            <a href="#" class="btn bueno-btn">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- ##### Big Posts Area End ##### -->
+{% endblock %}

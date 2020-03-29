@@ -1,0 +1,118 @@
+{% extends 'userbase.html.twig' %}
+
+{% block title %}{{ app.user.name }} Profile{% endblock %}
+
+{% block body %}
+    <SCRIPT language="JavaScript", type="text/javascript">
+        function openWin( windowURL, windowName, windowFeatures) { window.open(windowURL, windowName, windowFeatures);}
+    </SCRIPT>
+    <!---------------------------------------------------------------------------------------------------------------------->
+    <div class="container">
+        <div class="row profile">
+            <div class="col-md-3">
+                <div class="profile-sidebar">
+                    <!-- SIDEBAR USERPIC -->
+                    <div class="profile-userpic">
+                        <img src="{{ asset('uploads/image/' ~ app.user.image) }}" class="img-responsive" alt="user">
+                    </div>
+                    <!-- END SIDEBAR USERPIC -->
+                    <!-- SIDEBAR USER TITLE -->
+                    <div class="profile-usertitle">
+                        <div class="profile-usertitle-name">
+                            Marcus Doe
+                        </div>
+                        <div class="profile-usertitle-job">
+                            Developer
+                        </div>
+                    </div>
+                    <!-- END SIDEBAR USER TITLE -->
+                    <!-- SIDEBAR BUTTONS -->
+                    <div class="profile-userbuttons">
+                        <button type="button" class="btn btn-success btn-sm">Follow</button>
+                        <button type="button" class="btn btn-danger btn-sm">Message</button>
+                    </div>
+                    <!-- END SIDEBAR BUTTONS -->
+                    <!-- SIDEBAR MENU -->
+                    <div class="profile-usermenu">
+                        <ul class="nav">
+                            <li>
+                                <a href="/user">
+                                    <i class="glyphicon glyphicon-home"></i>My Profile</a>
+                            </li>
+                        </ul>
+                        <ul class="nav">
+                            <li>
+                                <a href="/user/post">
+                                    <i class="glyphicon glyphicon-user"></i> My Post </a>
+                            </li>
+                        </ul>
+                        <ul class="nav">
+                            <li>
+                                <a href="/user/comments" target="_blank">
+                                    <i class="glyphicon glyphicon-ok"></i>My Comments</a>
+                            </li>
+                        </ul>
+                        <ul class="nav">
+                            <li>
+                                <a href="/logout">
+                                    <i class="glyphicon glyphicon-flag"></i>Logout </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- END MENU -->
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="profile-content">
+                    <h1>User Post Panel</h1>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>Keywords</th>
+                            <th>Description</th>
+                            <th>Image</th>
+                            <th>Status</th>
+                            <th>Created_at</th>
+                            <th>Updated_at</th>
+                            <th>Detail</th>
+                            <th>Image Gallery</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for post in posts %}
+                            <tr>
+                                <td>{{ post.id }}</td>
+                                <td>{{ post.title }}</td>
+                                <td>{{ post.keywords }}</td>
+                                <td>{{ post.description }}</td>
+                                <td><img src="{{ asset('uploads/image/' ~ post.image) }}" height="40"></td>
+                                <td>{{ post.status }}</td>
+                                <td>{{ post.createdAt ? post.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                                <td>{{ post.updatedAt ? post.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                                <td>{{ post.detail }}</td>
+                                <td>
+                                    <a href="javascript:openWin('{{ path('user_image_new', {'id':post.id}) }}','','toolbar=no,location=no,directories=0,status=no,top=50,left=100,menuBar=no,scrollBars=yes,resizable=no,width=900,height=600');">
+                                        <img src="{{ asset('admin/assets/img') }}/gallery.png" height="40">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('user_post_show', {'id': post.id}) }}">show</a>
+                                    <a href="{{ path('user_post_edit', {'id': post.id}) }}">edit</a>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="12">no records found</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <a href="{{ path('user_post_new') }}">Create new</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

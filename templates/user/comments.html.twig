@@ -1,0 +1,98 @@
+{% extends 'userbase.html.twig' %}
+
+{% block title %}{{ app.user.name }} Profile{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row profile">
+            <div class="col-md-3">
+                <div class="profile-sidebar">
+                    <!-- SIDEBAR USERPIC -->
+                    <div class="profile-userpic">
+                       <img src="{{ asset('uploads/image/' ~ app.user.image) }}" class="img-responsive" alt="user">
+                    </div>
+                    <!-- END SIDEBAR USERPIC -->
+                    <!-- SIDEBAR USER TITLE -->
+                    <div class="profile-usertitle">
+                        <div class="profile-usertitle-name">
+                            Marcus Doe
+                        </div>
+                        <div class="profile-usertitle-job">
+                            Developer
+                        </div>
+                    </div>
+                    <!-- END SIDEBAR USER TITLE -->
+                    <!-- SIDEBAR BUTTONS -->
+                    <div class="profile-userbuttons">
+                        <button type="button" class="btn btn-success btn-sm">Follow</button>
+                        <button type="button" class="btn btn-danger btn-sm">Message</button>
+                    </div>
+                    <!-- END SIDEBAR BUTTONS -->
+                    <!-- SIDEBAR MENU -->
+                    <div class="profile-usermenu">
+                        <ul class="nav">
+                            <li>
+                                <a href="/user">
+                                    <i class="glyphicon glyphicon-home"></i>My Profile</a>
+                            </li>
+                        </ul>
+                        <ul class="nav">
+                            <li>
+                                <a href="/user/post">
+                                    <i class="glyphicon glyphicon-user"></i> My Post </a>
+                            </li>
+                        </ul>
+                        <ul class="nav">
+                            <li>
+                                <a href="/user/comments" target="_blank">
+                                    <i class="glyphicon glyphicon-ok"></i>My Comments</a>
+                            </li>
+                        </ul>
+                        <ul class="nav">
+                            <li>
+                                <a href="/logout">
+                                    <i class="glyphicon glyphicon-flag"></i>Logout </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- END MENU -->
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="profile-content">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Comment</th>
+                            <th>Status</th>
+                            <th>Post Title</th>
+                            <th>Created_at</th>
+                            <th>actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for comment in comments %}
+                            <tr>
+                                <td>{{ comment.subject }}</td>
+                                <td>{{ comment.comment }}</td>
+                                <td>{{ comment.status }}</td>
+                                <td><a href="{{ path('post_show', {'id': comment.postid}) }}">{{ comment.title }}</a></td>
+                                <td>{{ comment.created_at}}</td>
+                                <td>
+                                    <a href="{{ path('admin_comment_show', {'id': comment.id}) }}">show</a>
+                                    <a href="{{ path('admin_comment_edit', {'id': comment.id}) }}">edit</a>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="10">no records found</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

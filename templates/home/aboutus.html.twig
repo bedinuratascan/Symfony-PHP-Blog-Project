@@ -1,0 +1,21 @@
+{% extends 'userbase.html.twig' %}
+
+{% block title %}About Us | {{setting[0].title}}{% endblock %}
+{% block keywords %}{{ setting[0].keywords }}{% endblock %}
+{% block description %}{{ setting[0].description }}{% endblock %}
+
+{% block body %}
+    <!-- about_area_start -->
+    <div class="about_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="about_text">
+                     {{ setting[0].aboutus|raw }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- about_area_start -->
+{% endblock %}

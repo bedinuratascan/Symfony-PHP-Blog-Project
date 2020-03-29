@@ -1,0 +1,92 @@
+<!-- ##### Hero Area Start ##### -->
+<div class="hero-area">
+    <!-- Hero Post Slides -->
+    <div class="hero-post-slides owl-carousel">
+
+
+       {% for rs in slider %}
+
+        <!-- Single Slide -->
+        <div class="single-slide">
+            <!-- Blog Thumbnail -->
+            <div class="blog-thumbnail">
+                <a href="{{ path('post_show', {'id':rs.id}) }}"><img src="{{ asset('uploads/image/' ~ rs.image) }}" style="height: 493.625px; width: 409.656px" alt=""></a>
+            </div>
+
+            <!-- Blog Content -->
+            <div class="blog-content-bg">
+                <div class="blog-content">
+                    <a href="#" class="post-tag">{{ rs.category }}</a>
+                    <a href="#" class="post-title">{{ rs.title }}</a>
+                    <div class="post-meta">
+                        <a href="#" class="post-date">July 11, 2018</a>
+                        <a href="#" class="post-author">By Julia</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+        <!-- Single Slide -->
+        <div class="single-slide">
+            <!-- Blog Thumbnail -->
+            <div class="blog-thumbnail">
+                <a href="#"><img src="{{ asset('img') }}/bg-img/1.jpg" alt=""></a>
+            </div>
+
+            <!-- Blog Content -->
+            <div class="blog-content-bg">
+                <div class="blog-content">
+                    <a href="#" class="post-tag">Healthy Food</a>
+                    <a href="#" class="post-title">Chicken Salad</a>
+                    <div class="post-meta">
+                        <a href="#" class="post-date">July 11, 2018</a>
+                        <a href="#" class="post-author">By Julia Stiles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Single Slide -->
+        <div class="single-slide">
+            <!-- Blog Thumbnail -->
+            <div class="blog-thumbnail">
+                <a href="#"><img src="{{ asset('img') }}/bg-img/2.jpg" alt=""></a>
+            </div>
+
+            <!-- Blog Content -->
+            <div class="blog-content-bg">
+                <div class="blog-content">
+                    <a href="#" class="post-tag">Healthy Food</a>
+                    <a href="#" class="post-title">Chicken Salad</a>
+                    <div class="post-meta">
+                        <a href="#" class="post-date">July 11, 2018</a>
+                        <a href="#" class="post-author">By Julia Stiles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Single Slide -->
+        <div class="single-slide">
+            <!-- Blog Thumbnail -->
+            <div class="blog-thumbnail">
+                <a href="#"><img src="{{ asset('img') }}/bg-img/3.jpg" alt=""></a>
+            </div>
+
+            <!-- Blog Content -->
+            <div class="blog-content-bg">
+                <div class="blog-content">
+                    <a href="#" class="post-tag">Healthy Food</a>
+                    <a href="#" class="post-title">Chicken Salad</a>
+                    <div class="post-meta">
+                        <a href="#" class="post-date">July 11, 2018</a>
+                        <a href="#" class="post-author">By Julia Stiles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ##### Hero Area End ##### -->

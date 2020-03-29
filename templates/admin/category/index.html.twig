@@ -1,0 +1,113 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Category Home Page{% endblock %}
+
+{% block body %}
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="page-breadcrumb">
+            <div class="row">
+                <div class="col-12 d-flex no-block align-items-center">
+                    <h4 class="page-title">Category List</h4>
+                    <div class="ml-auto text-right">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Library</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="zero_config" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Parentid</th>
+                                    <th>Title</th>
+                                    <th>Keywords</th>
+                                    <th>Description</th>
+                                    <th>Image</th>
+                                    <th>Status</th>
+                                    <th>actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for category in categories %}
+                                <tr>
+                                    <td>{{ category.id }}</td>
+                                    <td>{{ category.parentid }}</td>
+                                    <td>{{ category.title }}</td>
+                                    <td>{{ category.keywords }}</td>
+                                    <td>{{ category.description }}</td>
+                                    <td>{{ category.image }}</td>
+                                    <td>{{ category.status }}</td>
+                                    <td>
+                                        <a href="{{ path('admin_category_show', {'id': category.id}) }}">show</a>
+                                        <a href="{{ path('admin_category_edit', {'id': category.id}) }}">edit</a>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td colspan="10">no records found</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                        <a href="{{ path('admin_category_new') }}">Create new</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer text-center">
+            All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <script src="{{ asset('admin') }}/assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="{{ asset('admin') }}/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="{{ asset('admin') }}/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="{{ asset('admin') }}/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="{{ asset('admin') }}/assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="{{ asset('admin') }}/dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="{{ asset('admin') }}/dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="{{ asset('admin') }}/dist/js/custom.min.js"></script>
+    <!-- this page js -->
+    <script src="{{ asset('admin') }}/assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
+    <script src="{{ asset('admin') }}/assets/extra-libs/multicheck/jquery.multicheck.js"></script>
+    <script src="{{ asset('admin') }}/assets/extra-libs/DataTables/datatables.min.js"></script>
+    <script>
+        /****************************************
+         *       Basic Table                   *
+         ****************************************/
+        $('#zero_config').DataTable();
+    </script>
+{% endblock %}

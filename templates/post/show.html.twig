@@ -1,0 +1,124 @@
+{% extends 'userbase.html.twig' %}
+
+{% block title %}{{ app.user.name }} Profile{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row profile">
+            <div class="col-md-3">
+                <div class="profile-sidebar">
+                    <!-- SIDEBAR USERPIC -->
+                    <div class="profile-userpic">
+                        <img src="{{ asset('uploads/image/' ~ app.user.image) }}" class="img-responsive" alt="user">
+                    </div>
+                    <!-- END SIDEBAR USERPIC -->
+                    <!-- SIDEBAR USER TITLE -->
+                    <div class="profile-usertitle">
+                        <div class="profile-usertitle-name">
+                            Marcus Doe
+                        </div>
+                        <div class="profile-usertitle-job">
+                            Developer
+                        </div>
+                    </div>
+                    <!-- END SIDEBAR USER TITLE -->
+                    <!-- SIDEBAR BUTTONS -->
+                    <div class="profile-userbuttons">
+                        <button type="button" class="btn btn-success btn-sm">Follow</button>
+                        <button type="button" class="btn btn-danger btn-sm">Message</button>
+                    </div>
+                    <!-- END SIDEBAR BUTTONS -->
+                    <!-- SIDEBAR MENU -->
+                    <div class="profile-usermenu">
+                        <ul class="nav">
+                            <li>
+                                <a href="/user">
+                                    <i class="glyphicon glyphicon-home"></i>My Profile</a>
+                            </li>
+                        </ul>
+                        <ul class="nav">
+                            <li>
+                                <a href="/user/post">
+                                    <i class="glyphicon glyphicon-user"></i> My Post </a>
+                            </li>
+                        </ul>
+                        <ul class="nav">
+                            <li>
+                                <a href="/user/comments" target="_blank">
+                                    <i class="glyphicon glyphicon-ok"></i>My Comments</a>
+                            </li>
+                        </ul>
+                        <ul class="nav">
+                            <li>
+                                <a href="/logout">
+                                    <i class="glyphicon glyphicon-flag"></i>Logout </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- END MENU -->
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="profile-content">
+                    <h1>Post</h1>
+
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <td>{{ post.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Title</th>
+                            <td>{{ post.title }}</td>
+                        </tr>
+                        <tr>
+                            <th>Keywords</th>
+                            <td>{{ post.keywords }}</td>
+                        </tr>
+                        <tr>
+                            <th>Description</th>
+                            <td>{{ post.description }}</td>
+                        </tr>
+                        <tr>
+                            <th>Image</th>
+                            <td>{{ post.image }}</td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td>{{ post.status }}</td>
+                        </tr>
+                        <tr>
+                            <th>Created_at</th>
+                            <td>{{ post.createdAt ? post.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>Updated_at</th>
+                            <td>{{ post.updatedAt ? post.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>Content</th>
+                            <td>{{ post.content }}</td>
+                        </tr>
+                        <tr>
+                            <th>Detail</th>
+                            <td>{{ post.detail }}</td>
+                        </tr>
+                        <tr>
+                            <th>Userid</th>
+                            <td>{{ post.userid }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <a href="{{ path('user_post_index') }}">back to list</a>
+
+                    <a href="{{ path('user_post_edit', {'id': post.id}) }}">edit</a>
+
+                    {{ include('post/_delete_form.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

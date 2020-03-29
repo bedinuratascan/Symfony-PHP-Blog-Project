@@ -1,0 +1,251 @@
+{% extends 'userbase.html.twig' %}
+
+{% block title %}{{ post.title }}{% endblock %}
+{% block keywords %}{{ post.keywords }}{% endblock %}
+{% block description %}{{ post.description }}{% endblock %}
+
+{% block body %}
+
+    <!-- ##### Post Details Area Start ##### -->
+    <section class="post-news-area section-padding-100-0 mb-70">
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- Post Details Content Area -->
+                <div class="col-12 col-lg-8 col-xl-9">
+                    <div class="post-details-content mb-100">
+                        <div class="blog-thumbnail mb-50">
+                            <img src="{{ asset('uploads/image/' ~ post.image) }}" style="height: 825px; width: 744px" alt=""></a>
+                        </div>
+                        <div class="blog-content">
+                            <a href="#" class="post-tag">{{post.category}}</a>
+                            <h4 class="post-title">{{post.title}}</h4>
+                            <div class="post-meta mb-50">
+                                <a href="#" class="post-date">July 11, 2018</a>
+                                <a href="#" class="post-author">By Julia Stiles</a>
+                            </div>
+                            <p>{{ post.detail|raw}}</p>
+                        </div>
+                    </div>
+
+                    <!-- Comment Area Start -->
+                    <div class="comment_area clearfix mb-100">
+                        <h4 class="mb-50">Comments</h4>
+
+                        <ol>
+                            {% for rs in comments %}
+                            <!-- Single Comment Area -->
+                            <li class="single_comment_area">
+                                <!-- Comment Content -->
+                                <div class="comment-content d-flex">
+                                    <!-- Comment Author -->
+                                    <div class="comment-author">
+                                        <img src="{{ asset('uploads/image/' ~ rs.image) }}" style="height: 51px " alt="author">
+                                    </div>
+                                    <!-- Comment Meta -->
+                                    <div class="comment-meta">
+                                        <div class="d-flex">
+                                            <a href="#" class="post-author">{{ rs.name }} {{ rs.surname }}</a>
+                                            <a href="#" class="post-date">{{ rs.created_at }}</a>
+                                            <a href="#" class="reply">Subject</a>
+                                        </div>
+                                        <p>{{ rs.comment }}</p>
+                                    </div>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+
+                    {% if app.user %}
+                    <div class="post-a-comment-area mb-30 clearfix">
+                        <h4 class="mb-50">Leave a reply</h4>
+
+                        <!-- Reply Form -->
+                        <div class="contact-form-area">
+                            <form action="{{ path('user_new_comment',{'id':post.id}) }}" method="post">
+                                <div class="row">
+                                    <div class="col-12 col-lg-6">
+                                        <input type="text" class="form-control" id="comment_subject" name="comment[subject]" placeholder="Subject">
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea name="comment[comment]" class="form-control" id="comment_comment" cols="30" rows="10" placeholder="Comment"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn bueno-btn mt-30" type="submit">Submit Comment</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                        {% else %}
+                            <a href="/loginuser">
+                        IF YOU WANT TO ADD COMMENTS PLEASE LOGIN
+                            </a>
+                    {% endif %}
+                </div>
+
+                <!-- Sidebar Widget -->
+                <div class="col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3">
+                    <div class="sidebar-area">
+
+                        <!-- Single Widget Area -->
+                        <div class="single-widget-area author-widget mb-30" style=" height: 369px; width:255px">
+                            <div class="background-pattern bg-img" style="background-image: url({{ asset('img') }}/core-img/pattern2.png);">
+                                <div class="author-thumbnail">
+                                    <img src="{{ asset('img') }}/bg-img/23.jpg" alt="">
+                                </div>
+                                <p>My name is <span>Jessica Smith</span>, I’m a passionate cook with a love for vegan food.</p>
+                            </div>
+                        </div>
+                        <!-- Single Widget Area -->
+                        <div class="single-widget-area post-widget mb-30" style="height: 462.5px; width: 255px">
+                            <!-- Single Post Area -->
+                            <div class="single-post-area d-flex">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail">
+                                    <img src="{{ asset('img') }}/bg-img/12.jpg" alt="">
+                                </div>
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <a href="#" class="post-title">Friend eggs with ham</a>
+                                    <div class="post-meta">
+                                        <a href="#" class="post-date">July 11, 2018</a>
+                                        <a href="#" class="post-author">By Julia Stiles</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single Post Area -->
+                            <div class="single-post-area d-flex">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail">
+                                    <img src="{{ asset('img') }}/bg-img/13.jpg" alt="">
+                                </div>
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <a href="#" class="post-title">Burger with fries</a>
+                                    <div class="post-meta">
+                                        <a href="#" class="post-date">July 11, 2018</a>
+                                        <a href="#" class="post-author">By Julia Stiles</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Post Area -->
+                            <div class="single-post-area d-flex">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail">
+                                    <img src="{{ asset('img') }}/bg-img/14.jpg" alt="">
+                                </div>
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <a href="#" class="post-title">Avocado &amp; Oisters</a>
+                                    <div class="post-meta">
+                                        <a href="#" class="post-date">July 11, 2018</a>
+                                        <a href="#" class="post-author">By Julia Stiles</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Post Area -->
+                            <div class="single-post-area d-flex">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail">
+                                    <img src="{{ asset('img') }}/bg-img/15.jpg" alt="">
+                                </div>
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <a href="#" class="post-title">Tortilla prawns</a>
+                                    <div class="post-meta">
+                                        <a href="#" class="post-date">July 11, 2018</a>
+                                        <a href="#" class="post-author">By Julia Stiles</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Post Area -->
+                            <div class="single-post-area d-flex">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail">
+                                    <img src="{{ asset('img') }}/bg-img/16.jpg" alt="">
+                                </div>
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <a href="#" class="post-title">Burger with fries</a>
+                                    <div class="post-meta">
+                                        <a href="#" class="post-date">July 11, 2018</a>
+                                        <a href="#" class="post-author">By Julia Stiles</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Post Details Area End ##### -->
+
+
+{% endblock %}
+
+
+
+{#    <div class="container">
+        <div class="row profile">
+            <div class="col-md-9">
+                <div class="profile-content">
+                    <h1>Post</h1>
+
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <td>{{ post.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Title</th>
+                            <td>{{ post.title }}</td>
+                        </tr>
+                        <tr>
+                            <th>Keywords</th>
+                            <td>{{ post.keywords }}</td>
+                        </tr>
+                        <tr>
+                            <th>Description</th>
+                            <td>{{ post.description }}</td>
+                        </tr>
+                        <tr>
+                            <th>Image</th>
+                            <td>{{ post.image }}</td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td>{{ post.status }}</td>
+                        </tr>
+                        <tr>
+                            <th>Created_at</th>
+                            <td>{{ post.createdAt ? post.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>Updated_at</th>
+                            <td>{{ post.updatedAt ? post.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>Content</th>
+                            <td>{{ post.content }}</td>
+                        </tr>
+                        <tr>
+                            <th>Detail</th>
+                            <td>{{ post.detail }}</td>
+                        </tr>
+                        <tr>
+                            <th>Userid</th>
+                            <td>{{ post.userid }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>#}
+

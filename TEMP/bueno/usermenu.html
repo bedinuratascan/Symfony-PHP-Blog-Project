@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+
+        <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <!-- Title -->
+        <title>Bueno - Food Blog HTML Template</title>
+
+        <!-- Favicon -->
+        <link rel="icon" href="img/core-img/favicon.ico">
+
+        <!-- Stylesheet -->
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link rel="stylesheet" href="style.css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <style>
+            body {
+              background: #FFFFFF;
+            }
+
+            /* Profile container */
+            .profile {
+              margin: 20px 0;
+            }
+
+            /* Profile sidebar */
+            .profile-sidebar {
+              padding: 20px 0 10px 0;
+              background: #fff;
+            }
+
+            .profile-userpic img {
+              float: none;
+              margin: 0 auto;
+              width: 50%;
+              height: 50%;
+              -webkit-border-radius: 50% !important;
+              -moz-border-radius: 50% !important;
+              border-radius: 50% !important;
+            }
+
+            .profile-usertitle {
+              text-align: center;
+              margin-top: 20px;
+            }
+
+            .profile-usertitle-name {
+              color: #5a7391;
+              font-size: 16px;
+              font-weight: 600;
+              margin-bottom: 7px;
+            }
+
+            .profile-usertitle-job {
+              text-transform: uppercase;
+              color: #5b9bd1;
+              font-size: 12px;
+              font-weight: 600;
+              margin-bottom: 15px;
+            }
+
+            .profile-userbuttons {
+              text-align: center;
+              margin-top: 10px;
+            }
+
+            .profile-userbuttons .btn {
+              text-transform: uppercase;
+              font-size: 11px;
+              font-weight: 600;
+              padding: 6px 15px;
+              margin-right: 5px;
+            }
+
+            .profile-userbuttons .btn:last-child {
+              margin-right: 0px;
+            }
+
+            .profile-usermenu {
+              margin-top: 30px;
+            }
+
+            .profile-usermenu ul li {
+              border-bottom: 1px solid #f0f4f7;
+            }
+
+            .profile-usermenu ul li:last-child {
+              border-bottom: none;
+            }
+
+            .profile-usermenu ul li a {
+              color: #93a3b5;
+              font-size: 14px;
+              font-weight: 400;
+            }
+
+            .profile-usermenu ul li a i {
+              margin-right: 8px;
+              font-size: 14px;
+            }
+
+            .profile-usermenu ul li a:hover {
+              background-color: #fafcfd;
+              color: #5b9bd1;
+            }
+
+            .profile-usermenu ul li.active {
+              border-bottom: none;
+            }
+
+            .profile-usermenu ul li.active a {
+              color: #5b9bd1;
+              background-color: #f6f9fb;
+              border-left: 2px solid #5b9bd1;
+              margin-left: -2px;
+            }
+
+            /* Profile Content */
+            .profile-content {
+              padding: 20px;
+              background: #fff;
+              min-height: 460px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <!-- ##### Header Area Start ##### -->
+        <header class="header-area">
+
+            <!-- Top Header Area -->
+            <div class="top-header-area bg-img bg-overlay" style="background-image: url(img/bg-img/header.jpg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center justify-content-between">
+                        <div class="col-12 col-sm-6">
+                            <!-- Top Social Info -->
+                            <div class="top-social-info">
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Behance"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-5 col-xl-4">
+                            <!-- Top Search Area -->
+                            <div class="top-search-area">
+                                <form action="#" method="post">
+                                    <input type="search" name="top-search" id="topSearch" placeholder="Search">
+                                    <button type="submit" class="btn"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Logo Area -->
+            <div class="logo-area">
+                <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+            </div>
+
+            <!-- Navbar Area -->
+            <div class="bueno-main-menu" id="sticker">
+                <div class="classy-nav-container breakpoint-off">
+                    <div class="container">
+                        <!-- Menu -->
+                        <nav class="classy-navbar justify-content-between" id="buenoNav">
+
+                            <!-- Toggler -->
+                            <div id="toggler"><img src="img/core-img/toggler.png" alt=""></div>
+
+                            <!-- Navbar Toggler -->
+                            <div class="classy-navbar-toggler">
+                                <span class="navbarToggler"><span></span><span></span><span></span></span>
+                            </div>
+
+                            <!-- Menu -->
+                            <div class="classy-menu">
+
+                                <!-- Close Button -->
+                                <div class="classycloseIcon">
+                                    <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                                </div>
+
+                                <!-- Nav Start -->
+                                <div class="classynav">
+                                    <ul>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">About Us</a></li>
+                                        <li><a href="#">Pages</a>
+                                            <ul class="dropdown">
+                                                <li><a href="index.html">Home</a></li>
+                                                <li><a href="catagory.html">Catagory</a></li>
+                                                <li><a href="catagory-post.html">Catagory Post</a></li>
+                                                <li><a href="single-post.html">Single Post</a></li>
+                                                <li><a href="receipe.html">Recipe</a></li>
+                                                <li><a href="contact.html">Contact</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Recipes</a>
+                                            <div class="megamenu">
+                                                <ul class="single-mega cn-col-4">
+                                                    <li><a href="#">- Recipe</a></li>
+                                                    <li><a href="#">- Bread</a></li>
+                                                    <li><a href="#">- Breakfast</a></li>
+                                                    <li><a href="#">- Meat</a></li>
+                                                    <li><a href="#">- Fastfood</a></li>
+                                                    <li><a href="#">- Salad</a></li>
+                                                    <li><a href="#">- Soup</a></li>
+                                                </ul>
+                                                <ul class="single-mega cn-col-4">
+                                                    <li><a href="#">- Recipe</a></li>
+                                                    <li><a href="#">- Bread</a></li>
+                                                    <li><a href="#">- Breakfast</a></li>
+                                                    <li><a href="#">- Meat</a></li>
+                                                    <li><a href="#">- Fastfood</a></li>
+                                                    <li><a href="#">- Salad</a></li>
+                                                    <li><a href="#">- Soup</a></li>
+                                                </ul>
+                                                <ul class="single-mega cn-col-4">
+                                                    <li><a href="#">- Recipe</a></li>
+                                                    <li><a href="#">- Bread</a></li>
+                                                    <li><a href="#">- Breakfast</a></li>
+                                                    <li><a href="#">- Meat</a></li>
+                                                    <li><a href="#">- Fastfood</a></li>
+                                                    <li><a href="#">- Salad</a></li>
+                                                    <li><a href="#">- Soup</a></li>
+                                                </ul>
+                                                <ul class="single-mega cn-col-4">
+                                                    <li><a href="#">- Recipe</a></li>
+                                                    <li><a href="#">- Bread</a></li>
+                                                    <li><a href="#">- Breakfast</a></li>
+                                                    <li><a href="#">- Meat</a></li>
+                                                    <li><a href="#">- Fastfood</a></li>
+                                                    <li><a href="#">- Salad</a></li>
+                                                    <li><a href="#">- Soup</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="single-post.html">Blog</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+
+                                    <!-- Login/Register -->
+                                    <div class="login-area">
+                                        <a href="#">Login / Register</a>
+                                    </div>
+                                </div>
+                                <!-- Nav End -->
+
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+            <!-- ##### Search Area Start ##### -->
+        <div class="bueno-search-area section-padding-110-0 pb-70 bg-img" style="background-image: url(img/core-img/pattern.png);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <form action="#" method="post">
+                            <div class="row">
+                             
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ##### Search Area End ##### -->
+        <!-- ##### Header Area End ##### -->
+        <div class="container">
+            <div class="row profile">
+                <div class="col-md-3">
+                    <div class="profile-sidebar">
+                        <!-- SIDEBAR USERPIC -->
+                        <div class="profile-userpic">
+                            <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
+                        </div>
+                        <!-- END SIDEBAR USERPIC -->
+                        <!-- SIDEBAR USER TITLE -->
+                        <div class="profile-usertitle">
+                            <div class="profile-usertitle-name">
+                                Marcus Doe
+                            </div>
+                            <div class="profile-usertitle-job">
+                                Developer
+                            </div>
+                        </div>
+                        <!-- END SIDEBAR USER TITLE -->
+                        <!-- SIDEBAR BUTTONS -->
+                        <div class="profile-userbuttons">
+                            <button type="button" class="btn btn-success btn-sm">Follow</button>
+                            <button type="button" class="btn btn-danger btn-sm">Message</button>
+                        </div>
+                        <!-- END SIDEBAR BUTTONS -->
+                        <!-- SIDEBAR MENU -->
+                        <div class="profile-usermenu">
+                            <ul class="nav">
+                                <li>
+                                    <a href="#">
+                                    <i class="glyphicon glyphicon-home"></i>Overview </a>
+                                </li>
+                             </ul>
+                             <ul class="nav">    
+                                <li>
+                                    <a href="#">
+                                    <i class="glyphicon glyphicon-user"></i> Account Settings </a>
+                                </li>
+                              </ul>
+                              <ul class="nav">    
+                                <li>
+                                    <a href="#" target="_blank">
+                                    <i class="glyphicon glyphicon-ok"></i>Tasks </a>
+                                </li>
+                               </ul>      
+                               <ul class="nav">    
+                                 <li>
+                                    <a href="#">
+                                    <i class="glyphicon glyphicon-flag"></i>Help </a>
+                                 </li>
+                               </ul>
+                         </div>
+                        <!-- END MENU -->
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="profile-content">
+                       Some user related content goes here...
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+       
+      <!-- ##### Footer Area Start ##### -->
+        <footer class="footer-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-5">
+                        <!-- Copywrite Text -->
+                        <p class="copywrite-text"><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    </div>
+                    <div class="col-12 col-sm-7">
+                        <!-- Footer Nav -->
+                        <div class="footer-nav">
+                            <ul>
+                                <li class="active"><a href="#">Home</a></li>
+                                <li><a href="#">Recipes</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- ##### Footer Area Start ##### -->
+
+        <!-- ##### All Javascript Script ##### -->
+        <!-- jQuery-2.2.4 js -->
+        <script src="js/jquery/jquery-2.2.4.min.js"></script>
+        <!-- Popper js -->
+        <script src="js/bootstrap/popper.min.js"></script>
+        <!-- Bootstrap js -->
+        <script src="js/bootstrap/bootstrap.min.js"></script>
+        <!-- All Plugins js -->
+        <script src="js/plugins/plugins.js"></script>
+        <!-- Active js -->
+        <script src="js/active.js"></script>
+    </body>
+</html>
